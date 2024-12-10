@@ -72,11 +72,10 @@ jobs:
           key_id: ${{ env.KEY_ID }}
           target_artifact_reference: ${{ env.target_artifact_reference }}
           signature_format: cose
-          plugin_config: |-
-            ca_certs=.github/cert-bundle/cert-bundle.crt
-            self_signed=false
-          # If you are using self-signed certificate from AKV, then the `plugin_config` should be:
           # plugin_config: |-
-          #   self_signed=true
+          #   ca_certs=.github/cert-bundle/cert-bundle.crt
+          #   self_signed=false
+          # If you are using self-signed certificate from AKV, then the `plugin_config` should be:
+          plugin_config: |-
+            self_signed=true
           #allow_referrers_api: 'true'
-          
